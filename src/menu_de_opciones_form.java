@@ -11,6 +11,8 @@ public class menu_de_opciones_form extends JFrame{
     private JButton ventasButton;
     private JButton verProductosButton;
 
+    String producto;
+
     public menu_de_opciones_form(){
         setTitle("Menu de opciones");
         setContentPane(panel_menu_opc);
@@ -24,6 +26,19 @@ public class menu_de_opciones_form extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 new registro_form();
+            }
+        });
+        verProductosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //producto = String.format("Codigo: %s \nNombre: %s \nDetalle: %s \nPrecio Unitario: %.2f \nStock: %d",codigo,nombre,detalle,precio_u,stock);
+                JOptionPane.showMessageDialog(null,"Aqui deberia haber un producto");
+            }
+        });
+        ventasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }

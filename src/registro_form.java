@@ -21,7 +21,7 @@ public class registro_form extends JFrame{
     private JButton volverButton;
     private JButton guardarButton;
 
-    public String procucto;
+    public String producto;
 
     public registro_form() {
         setTitle("Registro");
@@ -48,7 +48,9 @@ public class registro_form extends JFrame{
                     } else if (precio_u > 9999.99 || stock > 999) {
                         JOptionPane.showMessageDialog(null,"Valores numericos fuera de rango");
                     } else {
-                        procucto = String.format("Codigo: %s \nNombre: %s Detalle: %s \nPrecio Unitario: %.2f \nStock: %d",codigo,nombre,detalle,precio_u,stock);
+                        producto = String.format("Codigo: %s \nNombre: %s \nDetalle: %s \nPrecio Unitario: %.2f \nStock: %d",codigo,nombre,detalle,precio_u,stock);
+                        //prod_lab.setText(producto);
+                        JOptionPane.showMessageDialog(null,producto);
                         JOptionPane.showMessageDialog(null, "Tu producto ha sido guardado con exito!");
                         dispose();
                         new menu_de_opciones_form();
@@ -56,6 +58,24 @@ public class registro_form extends JFrame{
                 } catch (Exception p) {
                     JOptionPane.showMessageDialog(null, "Existe un error en los datos");
                 }
+            }
+        });
+
+        limpiarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                cod_txtfld.setText("");
+                nombre_txtfld.setText("");
+                detalle_txtfld.setText("");
+                percio_u_txtfld.setText("");
+                stock_txtfld.setText("");
+            }
+        });
+        volverButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new menu_de_opciones_form();
             }
         });
     }
