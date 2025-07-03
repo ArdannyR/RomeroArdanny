@@ -32,7 +32,9 @@ public class login_form extends JFrame{
                     if (usuario.trim().isEmpty() || password.trim().isEmpty()) {
                         JOptionPane.showMessageDialog(null,"Por favor llenar todos los campos.");
                     } else if (usuario.equals("romero") && password.equals("esfot123")) {
-                        JOptionPane.showMessageDialog(null,"hola");
+                        dispose();
+                        // setVisible(false);
+                        new menu_de_opciones_form();
                     }
                     else {
                         JOptionPane.showMessageDialog(null, "Datos incorrectos, intente de nuevo.");
