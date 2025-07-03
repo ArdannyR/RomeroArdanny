@@ -16,7 +16,7 @@ public class menu_de_opciones_form extends JFrame{
     public menu_de_opciones_form(){
         setTitle("Menu de opciones");
         setContentPane(panel_menu_opc);
-        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setSize(400,150);
         setVisible(true);
@@ -38,7 +38,8 @@ public class menu_de_opciones_form extends JFrame{
         ventasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                dispose();
+                new ventas_form();
             }
         });
     }
